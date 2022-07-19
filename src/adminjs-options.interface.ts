@@ -8,6 +8,7 @@ import { ResourceOptions } from './backend/decorators/resource/resource-options.
 import { Locale } from './locale/config'
 import { CurrentAdmin } from './current-admin.interface'
 import { CoreScripts } from './core-scripts.interface'
+import { ResourceJSON } from './frontend/interfaces/resource-json.interface'
 
 /**
  * AdminJSOptions
@@ -471,4 +472,14 @@ export interface AdminJSOptionsWithDefault extends AdminJSOptions {
   };
   bundler: BundlerOptions;
   pages: AdminJSOptions['pages'];
+}
+
+export interface AdminJSOptionsJson {
+  resources: ResourceJSON[];
+  rootPath: string;
+  loginPath: string;
+  logoutPath: string;
+  branding: BrandingOptions;
+  version: VersionProps;
+  locale: Locale;
 }
