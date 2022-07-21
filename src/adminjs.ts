@@ -350,11 +350,13 @@ class AdminJS {
 
     return {
       resources: jsonResources,
-      rootPath: this.options.rootPath,
-      loginPath: this.options.loginPath,
-      logoutPath: this.options.logoutPath,
+      paths: {
+        rootPath: this.options.rootPath,
+        loginPath: this.options.loginPath,
+        logoutPath: this.options.logoutPath,
+      },
       branding: branding ?? {},
-      version: {
+      versions: {
         app: this.options.version?.app,
         admin: this.options.version?.admin ? AdminJS.VERSION : undefined,
       },

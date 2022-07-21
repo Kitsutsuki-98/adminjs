@@ -476,10 +476,13 @@ export interface AdminJSOptionsWithDefault extends AdminJSOptions {
 
 export interface AdminJSOptionsJson {
   resources: ResourceJSON[];
-  rootPath: string;
-  loginPath: string;
-  logoutPath: string;
+  paths: {
+    rootPath: string;
+    loginPath: string;
+    logoutPath: string;
+    [path: string]: string;
+  };
   branding: BrandingOptions;
-  version: VersionProps;
+  versions: VersionProps;
   locale: Locale;
 }
